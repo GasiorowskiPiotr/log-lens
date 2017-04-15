@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Add app</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <form [formGroup]="newApp" (ngSubmit)="submit()">
+        <ion-list>
+            <ion-item>
+                <ion-label>AI Application Name</ion-label>
+                <ion-input type="text" formControlName="name"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>AI Key</ion-label>
+                <ion-input type="text" formControlName="key"></ion-input>
+            </ion-item>
+
+        </ion-list>
+
+        <div padding>
+            <button ion-button color="primary" block type="submit" [disabled]="!newApp.valid">Add</button>
+        </div>
+    </form>
+</ion-content>
